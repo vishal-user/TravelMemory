@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/vishal-user/TravelMemory.git'
+            }
+        }
+        stage('install') {
+            steps {
+                 sh 'cd backend'
+                 
+                 sh 'npm install'
+            }
+        }
+        stage('Build') {
+            steps {
+                 sh 'cd backend'
+                 sh 'npm run build'
+            }
+        }
+    }
+}
