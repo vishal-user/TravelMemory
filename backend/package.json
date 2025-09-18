@@ -1,13 +1,13 @@
 {
   "name": "travelmemory-be",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend for TravelMemory app",
   "main": "index.js",
   "scripts": {
-    "build": "echo \"no build step required\"",
-    "start": "node dist/index.js",
+    "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo \"No build step defined\"",
+    "test": "echo \"No tests defined\" && exit 0"
   },
   "author": "Prashant Dey",
   "license": "ISC",
@@ -15,7 +15,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
-    "mongoose": "^7.2.4",
+    "mongoose": "^7.2.4"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.22"
   }
 }
+
