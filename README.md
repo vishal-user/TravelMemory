@@ -22,6 +22,7 @@ Data format to be added:
     "image": "https://t3.ftcdn.net/jpg/03/04/85/26/360_F_304852693_nSOn9KvUgafgvZ6wM0CNaULYUa7xXBkA.jpg",
     "shortDescription":"India is a wonderful country with rich culture and good people.",
     "featured": true
+
 }
 ```
 
