@@ -23,6 +23,7 @@ pipeline {
                 }
             }
         }
+    }
 
     post {
         success {
@@ -33,6 +34,7 @@ pipeline {
         }
     }
 }
+
 
 
 
