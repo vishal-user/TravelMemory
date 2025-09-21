@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'jenkin-agent-linuxec2'}
+    agent {label 'linux'}
 
     stages {
         stage('Checkout') {
@@ -34,6 +34,7 @@ pipeline {
         }
     }
 }
+
 
 
 
