@@ -1,19 +1,39 @@
 pipeline {
-    agent { label 'vishal-ssh-sgent' }
+    agent any
 
+    tools {
+        nodejs 'NodeJS'   // Jenkins → Global Tool Configuration → NodeJS
+    }
 
     stages {
+
         stage('Checkout') {
             steps {
+                echo 'Cloning repository...'
                 git branch: 'main', url: 'https://github.com/vishal-user/TravelMemory.git'
             }
         }
 
+        stage('Verify Project Structure') {
+            steps {
+                sh '''
+                    if [ ! -d "backend" ]; then
+                        echo "ERROR: backend directory not found!"
+                        ls -la
+                        exit 1
+                    fi
+                '''
+            }
+        }
 
-        stage('Install') {
+        stage('Install Dependencies') {
             steps {
                 dir('backend') {
-                    sh 'npm install'
+                    sh '''
+                        node -v
+                        npm -v
+                        npm install
+                    '''
                 }
             }
         }
@@ -29,10 +49,13 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline executed successfully.'
+            echo '✅ Pipeline executed successfully.'
         }
         failure {
-            echo 'Pipeline failed.'
+            echo '❌ Pipeline failed. Check console output.'
+        }
+        always {
+            cleanWs()
         }
     }
 }
