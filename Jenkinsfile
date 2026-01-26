@@ -1,28 +1,12 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS'   // Jenkins → Global Tool Configuration → NodeJS
-    }
-
     stages {
 
         stage('Checkout') {
             steps {
                 echo 'Cloning repository...'
                 git branch: 'main', url: 'https://github.com/vishal-user/TravelMemory.git'
-            }
-        }
-
-        stage('Verify Project Structure') {
-            steps {
-                sh '''
-                    if [ ! -d "backend" ]; then
-                        echo "ERROR: backend directory not found!"
-                        ls -la
-                        exit 1
-                    fi
-                '''
             }
         }
 
@@ -59,6 +43,7 @@ pipeline {
         }
     }
 }
+
 
 
 
