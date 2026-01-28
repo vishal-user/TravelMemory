@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     stages {
-
-        stage('Checkout') {
+       stage('Checkout') {
             steps {
                 echo 'Cloning repository...'
                 git branch: 'main', url: 'https://github.com/vishal-user/TravelMemory.git'
@@ -43,6 +42,7 @@ pipeline {
         }
     }
 }
+
 
 
 
