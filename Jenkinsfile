@@ -1,7 +1,6 @@
 pipeline {
     agent any
-    
-    stages {
+      stages {
        stage('Checkout') {
             steps {
                 echo 'Cloning repository...'
@@ -42,6 +41,7 @@ pipeline {
         }
     }
 }
+
 
 
 
